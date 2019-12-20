@@ -1,0 +1,43 @@
+show:
+  name: 'show'
+  description: ''
+  path: '/time/:area/:location'
+  method: 'get'
+  
+  uri:
+    - element: area
+      description: requests area.
+    - element: location
+      description: request location
+  
+  response:
+    - element: time
+      description: 'Returns time'
+      required: true
+      type: string
+  
+  messages:
+    - key: TimeZoneNotFoundError
+
+
+show_missing_param:
+  name: 'show_only_area'
+  description: ''
+  path: '/time/:area'
+  method: 'get'
+
+  uri:
+    - element: area
+      description: request area.
+  
+  request:
+    - element: location
+      description: Search location.
+      required: false
+      type: string
+
+  response:
+    - element: time
+      description: 'Returns time'
+      required: true
+      type: string

@@ -1,0 +1,4 @@
+TimeZoneNotFoundError:
+  status_code: 404
+  level: error
+  description: No timezone found for the given area/location.
